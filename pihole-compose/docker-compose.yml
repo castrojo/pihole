@@ -15,11 +15,5 @@ services:
       - '/home/jorge/pihole/pihole:/etc/pihole'
       - '/home/jorge/pihole/dnsmasq.d:/etc/dnsmasq.d'
     restart: unless-stopped
-  watchtower:
-    image: v2tec/watchtower
-    container_name: watchtower
-    volumes:
-      - /var/run/docker.sock:/var/run/docker.sock
-      - /root/.docker/config.json:/config.json
-    command: --schedule "0 0 3 * * *"
-    restart: unless-stopped
+    dns:
+      - 127.0.0.1
