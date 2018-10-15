@@ -1,15 +1,15 @@
 version: "3"
 services:
   pihole:
-    image: diginc/pi-hole:latest
+    image: pihole/pihole:latest
     container_name: pihole
     ports:
       - "53:53/tcp"
       - "53:53/udp"
       - "80:80/tcp"
     environment:
-      ServerIP: 192.168.1.100
-      INTERFACE: enp0s25
+      ServerIP: 192.168.1.201
+      INTERFACE: eth0
       WEBPASSWORD: doctorpizza
     volumes:
       - '/home/jorge/pihole/pihole:/etc/pihole'
